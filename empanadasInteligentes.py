@@ -1,7 +1,7 @@
 
 eleccion= 0 
 
-empanada = {'Nombre': None, 'Ingredientes': [], 'Precio Fabricacion': None, 'Precio Venta' : None}
+empanadas=[]
 
 while eleccion != 3:
 
@@ -11,6 +11,8 @@ while eleccion != 3:
     print("2. Mostrar Empanada")
     print("3. SALIR")
 
+    empanada = {}
+
     eleccion= int(input('Digite la opcion del Menu: '))
 
     if eleccion == 1: 
@@ -19,7 +21,7 @@ while eleccion != 3:
         
         ingredientes=[]
 
-        for i in range(0,3,1):
+        for i in range(3):
             ingrediente = input(f'Ingrese el ingrediente numero {i+1}: ')
 
             ingredientes.append(ingrediente)
@@ -37,10 +39,11 @@ while eleccion != 3:
         empanada['Precio Venta']= precioVenta
         print('Empanada guardada exitosamente')
 
+        empanadas.append(empanada)
+
     elif eleccion == 2:
 
-        for key, value in empanada.items():
-            print(f'{key}: {value}')
+        print(empanadas)
     elif eleccion== 3:
 
         print('Gracias por usar el Menu de empanadas')
